@@ -7,6 +7,27 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"}
+    :javascript
+      window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#252e39"
+          },
+          "button": {
+            "background": "#14a7d0"
+          }
+        },
+        "theme": "classic",
+        "content": {
+          "message": "Acest site foloseste prajiturele",
+          "dismiss": "Am inteles!",
+          "link": 'Mai multe',
+          "href": "/cookies_policy"
+        }
+      })});
   %body
     = render 'layouts/navbar'
     = yield

@@ -6,4 +6,6 @@ class PagesController < ApplicationController
   def contact; end
 
   def gallery; end
+
+  def cookies_policy; end
 end

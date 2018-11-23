@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 
@@ -7,4 +8,10 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/gallery', to: 'pages#gallery'
   get '/cookies_policy', to: 'pages#cookies_policy'
+
+
+  get '/admin', to: 'admin/gallery#index'
+  namespace :admin do
+    resources :gallery
+  end
 end

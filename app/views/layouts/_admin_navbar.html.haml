@@ -1,0 +1,13 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to( home_path, class: 'navbar-brand' ) do
+    = image_tag(asset_path('logo/small.png'))
+  %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item{ class: "#{params[:action] == 'gallery' ? 'active' : ''}" }
+        = link_to 'Gallery', admin_gallery_index_path, class: "nav-link"
+    %ul.navbar-nav.ml-auto
+      %li.nav-item{ class: "#{params[:action] == 'gallery' ? 'active' : ''}" }
+        = link_to "Log Out", destroy_admin_session_path, method: :delete, class: "nav-link to-right"
+

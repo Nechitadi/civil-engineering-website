@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/gallery', to: 'pages#gallery'
   get '/cookies_policy', to: 'pages#cookies_policy'
 
+  resources :leads, only: [:create]
+
 
   get '/admin', to: 'admin/posts#index'
   namespace :admin do

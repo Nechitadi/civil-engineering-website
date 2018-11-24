@@ -1,1 +1,23 @@
-%p Contact page
+.container.contact-page-container
+  .row.justify-content-center
+    .col-sm-12.col-md-6
+      %p.mt-5 Contact page
+
+      %form
+        .row.form-group
+          .col
+            %input.form-control{placeholder: 'Prenume', type: 'text'}
+          .col
+            %input.form-control{placeholder: 'Nume', type: 'text'}
+        .row.form-group
+          .col
+            %input.form-control{placeholder: 'Telefon', type: 'text'}
+          .col
+            %input.form-control{placeholder: 'Email', type: 'text'}
+        .row.form-group
+          .col
+            %input.form-control{placeholder: 'Companie', type: 'text'}
+
+        .row.form-group
+          .col
+            %textarea.form-control{placeholder: 'Descrierea proiectului', rows: '5'}

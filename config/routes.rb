@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   get '/cookies_policy', to: 'pages#cookies_policy'
 
 
-  get '/admin', to: 'admin/gallery#index'
+  get '/admin', to: 'admin/posts#index'
   namespace :admin do
-    resources :gallery
+    resources :posts, only: [:index]
+    resources :leads, only: [:index]
   end
 end

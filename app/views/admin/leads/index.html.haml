@@ -1,0 +1,22 @@
+.container.admin-leads-container
+  %h3.mt-4 Leads from contact form
+  %table.table.mt-4
+    %thead.thead-dark
+      %tr
+        %th{scope: "col"} #
+        %th{scope: "col"} First Name
+        %th{scope: "col"} Last Name
+        %th{scope: "col"} Phone
+        %th{scope: "col"} Email
+        %th{scope: "col"} Company
+        %th{scope: "col"} Description
+    %tbody
+      - @leads.each do |lead|
+        %tr
+          %th{scope: "row"}= lead.id
+          %td= lead.first_name
+          %td= lead.last_name
+          %td= lead.phone
+          %td= lead.email
+          %td= lead.company
+          %td= lead.description

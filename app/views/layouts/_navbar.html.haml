@@ -1,15 +1,15 @@
-%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-  = link_to( home_path, class: 'navbar-brand' ) do
+%nav#main-navbar.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to( homepage_path, class: 'navbar-brand' ) do
     = image_tag(asset_path('logo/small.png'))
   %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarNav.collapse.navbar-collapse
     %ul.navbar-nav
       %li.nav-item{ class: "#{params[:action] == 'home' ? 'active' : ''}" }
-        = link_to 'Home', home_path, class: "nav-link"
+        = link_to 'Home', '#home', class: "nav-link"
       %li.nav-item{ class: "#{params[:action] == 'about' ? 'active' : ''}" }
-        = link_to 'About', about_path, class: "nav-link"
+        = link_to 'About', '#about', class: "nav-link"
       %li.nav-item{ class: "#{params[:action] == 'contact' ? 'active' : ''}" }
-        = link_to 'Contact', contact_path, class: "nav-link"
+        = link_to 'Contact', '#contact', class: "nav-link"
       %li.nav-item{ class: "#{params[:action] == 'gallery' ? 'active' : ''}" }
-        = link_to 'Gallery', gallery_path, class: "nav-link"
+        = link_to 'Gallery', '#gallery', class: "nav-link"

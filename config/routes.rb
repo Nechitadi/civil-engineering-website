@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'pages#home'
+  root to: 'homepage#index'
 
-  get '/home', to: 'pages#home'
-  get '/about', to: 'pages#about'
-  get '/contact', to: 'pages#contact'
-  get '/gallery', to: 'pages#gallery'
+  devise_for :admins
+
   get '/cookies_policy', to: 'pages#cookies_policy'
 
-  resources :leads, only: [:create]
+  get '/homepage', to: 'homepage#index'
 
+  resources :leads, only: [:create]
 
   get '/admin', to: 'admin/posts#index'
   namespace :admin do

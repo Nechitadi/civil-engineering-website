@@ -1,0 +1,14 @@
+.row.justify-content-center
+  .col-sm-12.col-md-6.bg-second.pt-3.form-container
+    - form_action = params[:action] == 'new' ? 'create' : 'update'
+    = form_for @post, url: { action: form_action, controller: 'admin/posts' } do |f|
+      .row.form-group
+        .col
+          = f.text_field :title, placeholder: 'Title', type: 'text', class: 'form-control'
+      .row.form-group
+        .col
+          = f.text_area :body, placeholder: 'Post Body', type: 'text', class: 'form-control', rows: '10'
+
+      .row.form-group
+        .col
+          = f.submit 'Create', class: 'btn btn-dark float-right'

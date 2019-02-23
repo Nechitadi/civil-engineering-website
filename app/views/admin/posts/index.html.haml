@@ -1,2 +1,19 @@
 .container.admin-posts-container
-  %h3 Admin posts page
+  .row.justify-content-between.px-3
+    %h3 Admin posts
+    = link_to 'Create Post', new_admin_post_path, class: 'btn btn-dark float-right'
+
+  %table.table.mt-4
+    %thead.thead-dark
+      %tr
+        %th{scope: "col"} #
+        %th{scope: "col"} Title
+        %th{scope: "col"} Body
+        %th{scope: "col"}
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %th{scope: "row"}= post.id
+          %td= post.title
+          %td= post.body
+          %td= link_to 'Edit', edit_admin_post_path(post.id), class: 'btn btn-dark float-right'

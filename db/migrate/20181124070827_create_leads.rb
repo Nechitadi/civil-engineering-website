@@ -7,6 +7,8 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.string :phone
       t.string :company
       t.text :description
+
+      t.timestamps
     end
   end
 end

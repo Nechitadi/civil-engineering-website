@@ -5,6 +5,8 @@
       .row.form-group
         .col
           = f.text_field :title, placeholder: 'Title', type: 'text', class: 'form-control'
+        .col
+          = f.file_field :featured_image
       .row.form-group
         .col
           = f.text_area :body, placeholder: 'Post Body', type: 'text', class: 'form-control', rows: '10'

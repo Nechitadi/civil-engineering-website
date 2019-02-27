@@ -1,3 +1,11 @@
 .bg-second
   .container.gallery-page-container
     %h3 Gallery page
+
+    .row.posts-container
+      - @posts.each do |post|
+        .col-4
+          .post
+            - if post.featured_image.attached?
+              = image_tag(url_for(post.featured_image), class: 'featured-image')
+

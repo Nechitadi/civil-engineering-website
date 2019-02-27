@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :leads, only: [:create]
 
   get '/admin', to: 'admin/posts#index'
+
   namespace :admin do
     resources :posts, only: %i[index new edit create update]
     resources :leads, only: [:index]
